@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./images/background.png");
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}

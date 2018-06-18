@@ -1,0 +1,49 @@
+#help-btn {
+    position: relative;
+    top: 35px;
+    left: 45px;
+    z-index: 999;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    color: #696464;
+    background-color: #fcfcfc;
+    border: 1px solid #bab8b8;
+}
+
+#help-btn:hover {
+    color: #4b4747;
+    background-color: #ececec;
+}
+
+#help-btn-active {
+    position: absolute;
+    top: 40px;
+    left: 45px;
+    z-index: -999;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Classes added for transitions */
+
+.btn-open {
+    -webkit-transform: scale(70);
+    -ms-transform: scale(70);
+    transform: scale(70);
+    -webkit-transition: all .7s;
+    -o-transition: all .7s;
+    transition: all .7s;
+}
+
+.btn-closed {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all .7s;
+    -o-transition: all .7s;
+    transition: all .7s;
+}

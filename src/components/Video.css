@@ -1,0 +1,315 @@
+#video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 150px;
+    width: 200px;
+}
+
+.video {
+    background-color: rgb(25, 25, 25);
+    overflow: hidden;
+}
+
+.video-container {
+    margin-top: -1%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.video-btns-container {
+    background-color: rgb(25, 25, 25);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+}
+
+.video-stop-btn {
+    background: none;
+    border: none;
+}
+
+.take-photo-btn {
+    background: none;
+    border: none;
+}
+
+.video-play-btn {
+    background: none;
+    border: none;
+}
+
+.video-stop-btn svg:hover,
+.take-photo-btn svg:hover,
+.video-play-btn svg:hover {
+    fill: #2e81ad;
+}
+
+.curtain-container {
+    overflow: hidden;
+    height: 154px;
+    width: 200px;
+    position: relative;
+}
+
+#left-curtain {
+    position: relative;
+    background-image: url(../images/curtain-left.jpg);
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    z-index: 2;
+}
+
+#right-curtain {
+    display: inline-block;
+    position: relative;
+    background-image: url(../images/curtain-right.jpg);
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+}
+
+/*Classes added for to trigger animations*/
+
+.slide-right {
+    -webkit-animation: slideRight 1s forwards;
+    animation: slideRight 1s forwards;
+}
+
+.slide-left {
+    -webkit-animation: slideLeft 1s forwards;
+    animation: slideLeft 1s forwards;
+}
+
+.slide-right-close {
+    -webkit-animation: slideRightClose 1s forwards;
+    animation: slideRightClose 1s forwards;
+}
+
+.slide-left-close {
+    -webkit-animation: slideLeftClose 1s forwards;
+    animation: slideLeftClose 1s forwards;
+}
+
+/*Animations for the video curtains opening and closing*/
+
+@-webkit-keyframes slideLeft {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+}
+
+@-webkit-keyframes slideLeftClose {
+    0% {
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeftClose {
+    0% {
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideRightClose {
+    0% {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRightClose {
+    0% {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+/*Help pop up spans*/
+
+.video-container span {
+    width: 140px;
+    color: #FFFFFF;
+    background: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.video-container #span-top {
+    position: relative;
+    visibility: hidden;
+    height: 80px;
+    opacity: 0.8;
+    bottom: 80px;
+    margin-top: -100px;
+    z-index: 999;
+}
+
+#span-top:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #000000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.video-container #span-top.help-show-top {
+    visibility: visible;
+    -webkit-transition-delay: .18s;
+    -o-transition-delay: .18s;
+    transition-delay: .18s;
+}
+
+.video-container #span-right {
+    position: relative;
+    visibility: hidden;
+    opacity: 0.8;
+    height: 65px;
+    bottom: 15px;
+    height: 55px;
+    left: 190px;
+    margin-top: -64px;
+}
+
+#span-right:after {
+    content: '';
+    position: absolute;
+    top: 65%;
+    right: 100%;
+    margin-top: -8px;
+    width: 0;
+    height: 0;
+    border-right: 8px solid #000000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.video-container #span-right.help-show-right {
+    visibility: visible;
+    -webkit-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    transition-delay: .2s;
+}
+
+.video-container #span-left {
+    position: relative;
+    visibility: hidden;
+    opacity: 0.8;
+    margin-top: -15px;
+    bottom: 45px;
+    height: 55px;
+    right: 189px;
+}
+
+#span-left:after {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 100%;
+    margin-top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid #000000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.video-container #span-left.help-show-left {
+    visibility: visible;
+    -webkit-transition-delay: .12s;
+    -o-transition-delay: .12s;
+    transition-delay: .12s;
+}
