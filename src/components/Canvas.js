@@ -32,6 +32,7 @@ class Canvas extends Component {
       this.canvasOffset = this.textCanvas.getBoundingClientRect();
       this.offsetX = this.canvasOffset.left;
       this.offsetY = this.canvasOffset.top;
+      console.log(this.offsetX, this.offsetY);
       this.isTextSelected = false;
       this.startX = 0;
       this.startY = 0;
@@ -156,6 +157,7 @@ class Canvas extends Component {
       const mouseY = parseInt(e.clientY - this.offsetY, 10);
       const dx = mouseX - this.startX;
       const dy = mouseY - this.startY;
+      console.log( dx, dy, mouseX, mouseY);
       this.startX = mouseX;
       this.startY = mouseY;
       this.text.x += dx;
@@ -328,7 +330,7 @@ class Canvas extends Component {
             </button>
             <button
               id="add-stamp-btn"
-              disabled={stamped ? true : false}
+              disabled={stamped}
               onClick={this.handleStampToggle}>
               {stamped ? "Stamped": "Stamp"}
             </button>

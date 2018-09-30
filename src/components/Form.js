@@ -120,8 +120,12 @@ class Form extends Component {
       ctx.fillStyle = "black";
       let today = new Date();
       let day = today.getDate();
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sep", "Oct", "Nov", "Dec"];
       let month = today.getMonth() + 1;
-      switch(month) {
+      monthNames.forEach(function(name, index) {
+        if(index + 1 === month) month = name;
+      });
+      /*switch(month) {
         case 1:
           month = "Jan";
           break;
@@ -161,8 +165,8 @@ class Form extends Component {
         default:
           month = "Jan";
       }
-
-      if (day < 10) day = `0 ${day}`;
+      */
+      if (day < 10) day = `0${day}`;
       today = `${month} ${day}`;
       ctx.fillText(today, 458, 60);
     }
@@ -183,9 +187,9 @@ class Form extends Component {
             <button
               id="email-btn"
               type="submit"
-              disabled={isSubmitted ? true : false}
+              disabled={isSubmitted}
             >
-                Send Post Card
+              Send Post Card
             </button>
             <span className={this.props.isHelpBtnActive ? "help-show-bottom": ""}>
               Enter a email address then click the button. You post card will be sent.
