@@ -20,6 +20,9 @@
     "eslint-plugin-react": "7.4.0",
     "nodemon": "^1.17.5"
   },
+  "engines": {
+    "node": "10.4.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "server": "nodemon app.js",
