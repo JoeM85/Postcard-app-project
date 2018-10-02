@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import stamp from "../sounds/stamp.mp3";
 import sent from "../sounds/sent.mp3";
 import postmark from "../images/post-mark.png";
-import postagestamp from "../images/postage-stamp.png";
+import postagestamp from "../images/postage_stamp.png";
 import "./Canvas.css";
 
 class Canvas extends Component {
